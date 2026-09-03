@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cara | Contact</title>
+    <title>Cara | Sign Up</title>
     <meta
       name="description"
-      content="Contact Cara for support, store details, enquiries, and help with orders and product information."
+      content="Create your Cara account to save favourites, manage orders, and get updates on new arrivals and special offers."
     />
 
     <link
@@ -37,8 +37,7 @@
         color: #1a1a1a;
       }
 
-      img,
-      iframe {
+      img {
         display: block;
         max-width: 100%;
       }
@@ -71,11 +70,6 @@
       h4 {
         font-size: 18px;
         color: #222;
-      }
-
-      h5 {
-        font-size: 16px;
-        color: #1a1a1a;
       }
 
       p {
@@ -177,9 +171,9 @@
             rgba(0, 0, 0, 0.38),
             rgba(0, 0, 0, 0.38)
           ),
-          url("img/banner/b4.jpg");
+          url("img/banner/b16.jpg");
         width: 100%;
-        height: 36vh;
+        height: 34vh;
         background-size: cover;
         background-position: center;
         display: flex;
@@ -216,148 +210,183 @@
         font-size: 14px;
       }
 
-      #contact-details {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
+      .signup-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
         gap: 40px;
+        align-items: stretch;
       }
 
-      #contact-details .details {
-        width: 40%;
-      }
-
-      #contact-details .details span,
-      #form-details form span {
-        font-size: 12px;
-        display: block;
-        margin-bottom: 12px;
-        color: #7b8a84;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      #contact-details .details h2,
-      #form-details form h2 {
-        font-size: 26px;
-        line-height: 1.35;
-        padding-bottom: 15px;
-      }
-
-      #contact-details .details h3 {
-        font-size: 16px;
-        padding-bottom: 15px;
-      }
-
-      #contact-details .details li {
-        list-style: none;
+      .signup-info {
+        background: linear-gradient(135deg, #088178, #0aa79c);
+        border-radius: 24px;
+        padding: 50px 40px;
+        color: #fff;
         display: flex;
-        padding: 10px 0;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100%;
+      }
+
+      .signup-info h2,
+      .signup-info p,
+      .signup-info li {
+        color: #fff;
+      }
+
+      .signup-info h2 {
+        margin-bottom: 18px;
+      }
+
+      .signup-info p {
+        margin-bottom: 24px;
+      }
+
+      .signup-info ul {
+        display: grid;
         gap: 14px;
       }
 
-      #contact-details .details li i {
-        font-size: 14px;
-        padding-top: 6px;
-        color: #088178;
-      }
-
-      #contact-details .details li p {
-        margin: 0;
-        font-size: 14px;
-      }
-
-      #contact-details .map {
-        width: 55%;
-        height: 420px;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 18px 32px rgba(0, 0, 0, 0.06);
-      }
-
-      #contact-details .map iframe {
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
-
-      #form-details {
+      .signup-info li {
         display: flex;
-        justify-content: space-between;
-        margin: 30px 80px;
-        padding: 60px;
-        border: 1px solid #e1e1e1;
-        border-radius: 24px;
-        gap: 40px;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 15px;
+        line-height: 1.7;
       }
 
-      #form-details form {
-        width: 65%;
+      .signup-info li i {
+        margin-top: 4px;
+      }
+
+      .signup-card {
+        background: #fff;
+        border: 1px solid #e4e4e4;
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.05);
+      }
+
+      .signup-card span.form-tag {
+        display: inline-block;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #088178;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .signup-card h2 {
+        margin-bottom: 8px;
+      }
+
+      .signup-card .form-subtext {
+        margin-bottom: 24px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px 16px;
+      }
+
+      .form-group {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
       }
 
-      #form-details form input,
-      #form-details form textarea {
-        width: 100%;
-        padding: 14px 16px;
-        outline: none;
-        margin-bottom: 20px;
-        border: 1px solid #dcdcdc;
-        border-radius: 10px;
-        font-size: 14px;
+      .form-group.full {
+        grid-column: 1 / -1;
       }
 
-      #form-details form label {
+      .form-group label {
         font-size: 14px;
         font-weight: 600;
         color: #1a1a1a;
         margin-bottom: 8px;
       }
 
-      #form-details form textarea {
-        resize: vertical;
-        min-height: 160px;
+      .form-group input {
+        width: 100%;
+        padding: 14px 16px;
+        outline: none;
+        border: 1px solid #dcdcdc;
+        border-radius: 10px;
+        font-size: 14px;
       }
 
-      #form-details form button {
-        background-color: #088178;
-        color: #fff;
-      }
-
-      .people {
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        gap: 22px;
-      }
-
-      .people-card {
-        display: flex;
-        align-items: flex-start;
-        gap: 15px;
-      }
-
-      .people-card img {
-        width: 65px;
-        height: 65px;
-        object-fit: cover;
-        border-radius: 50%;
-      }
-
-      .people-card p {
-        margin: 0;
-        font-size: 13px;
+      .form-group small {
+        margin-top: 8px;
+        font-size: 12px;
+        color: #6f7d77;
         line-height: 1.6;
       }
 
-      .people-card p span {
-        display: block;
-        font-size: 16px;
+      .password-wrap {
+        position: relative;
+      }
+
+      .password-wrap input {
+        padding-right: 110px;
+      }
+
+      .toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        border: none;
+        background: transparent;
+        color: #088178;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .checkbox-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .checkbox-row input {
+        margin-top: 4px;
+      }
+
+      .checkbox-row label {
+        font-size: 14px;
+        color: #465b52;
+        line-height: 1.7;
+      }
+
+      .checkbox-row a {
+        color: #088178;
         font-weight: 600;
-        color: #000;
+      }
+
+      .signup-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .signup-actions button {
+        background: #088178;
+        color: #fff;
+      }
+
+      .login-link {
+        font-size: 14px;
+        color: #465b52;
+      }
+
+      .login-link a {
+        color: #088178;
+        font-weight: 700;
       }
 
       #newsletter {
@@ -486,9 +515,8 @@
           padding: 20px 40px;
         }
 
-        #form-details {
-          margin: 30px 40px;
-          padding: 40px;
+        .signup-wrap {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -555,24 +583,8 @@
           display: none;
         }
 
-        #contact-details {
-          flex-direction: column;
-        }
-
-        #contact-details .details,
-        #contact-details .map {
-          width: 100%;
-        }
-
-        #form-details {
-          margin: 30px 20px;
-          padding: 30px 20px;
-          flex-direction: column;
-        }
-
-        #form-details form,
-        .people {
-          width: 100%;
+        .form-grid {
+          grid-template-columns: 1fr;
         }
 
         #newsletter {
@@ -595,8 +607,14 @@
           font-size: 26px;
         }
 
-        #contact-details .map {
-          height: 300px;
+        .signup-info,
+        .signup-card {
+          padding: 28px 20px;
+        }
+
+        .signup-actions {
+          flex-direction: column;
+          align-items: stretch;
         }
 
         #newsletter .form {
@@ -626,7 +644,8 @@
           <li><a href="shop.html">Shop</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a class="active" href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="active" href="signup.html">Sign Up</a></li>
           <li id="lg-bag">
             <a href="cart.html" aria-label="Cart">
               <i class="far fa-shopping-bag"></i>
@@ -647,119 +666,172 @@
     </header>
 
     <section id="page-header">
-      <h2>#letstalk</h2>
-      <p>Leave a message. We would love to hear from you.</p>
+      <h2>#joincara</h2>
+      <p>Create your account and unlock a faster shopping experience.</p>
       <div class="breadcrumb">
         <a href="index.html">Home</a>
         <span>/</span>
-        <span>Contact</span>
+        <span>Sign Up</span>
       </div>
     </section>
 
-    <main>
-      <section id="contact-details" class="section-p1">
-        <div class="details">
-          <span>Get In Touch</span>
-          <h2>Visit one of our store locations or contact us today</h2>
-          <h3>Head Office</h3>
+    <main class="section-p1">
+      <section class="signup-wrap">
+        <div class="signup-info">
+          <h2>Create your Cara account</h2>
+          <p>
+            Sign up to save your favourites, track orders, discover fresh
+            arrivals, and receive updates on exclusive drops and offers.
+          </p>
+
           <ul>
             <li>
-              <i class="fal fa-map"></i>
-              <p>84/6 Chinna Kaziyar Street, Cuddalore, Tamil Nadu, India</p>
+              <i class="fas fa-check-circle"></i>
+              Save your wishlist and revisit products later.
             </li>
             <li>
-              <i class="far fa-envelope"></i>
-              <p>contact@carafashion.com</p>
+              <i class="fas fa-check-circle"></i>
+              Get quicker checkout details for future orders.
             </li>
             <li>
-              <i class="fas fa-phone-alt"></i>
-              <p>+91 98765 43210</p>
+              <i class="fas fa-check-circle"></i>
+              Receive updates on new collections and seasonal deals.
             </li>
             <li>
-              <i class="far fa-clock"></i>
-              <p>Monday to Saturday: 10:00 AM to 6:00 PM</p>
+              <i class="fas fa-check-circle"></i>
+              Manage your shopping experience from one account.
             </li>
           </ul>
         </div>
 
-        <div class="map">
-          <iframe
-            src="https://www.google.com/maps?q=Cuddalore,Tamil%20Nadu,India&output=embed"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Cara store location map"
-          ></iframe>
-        </div>
-      </section>
+        <div class="signup-card">
+          <span class="form-tag">New Account</span>
+          <h2>Sign Up</h2>
+          <p class="form-subtext">
+            Fill in your details below to create your account.
+          </p>
 
-      <section id="form-details">
-        <form>
-          <span>Leave A Message</span>
-          <h2>We love to hear from you</h2>
+          <form action="#" method="post">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input
+                  id="first-name"
+                  name="firstName"
+                  type="text"
+                  autocomplete="given-name"
+                  required
+                />
+              </div>
 
-          <label for="contact-name">Your Name</label>
-          <input
-            id="contact-name"
-            type="text"
-            placeholder="Enter your full name"
-          />
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input
+                  id="last-name"
+                  name="lastName"
+                  type="text"
+                  autocomplete="family-name"
+                  required
+                />
+              </div>
 
-          <label for="contact-email">Email Address</label>
-          <input
-            id="contact-email"
-            type="email"
-            placeholder="Enter your email"
-          />
+              <div class="form-group full">
+                <label for="full-name">Full Name</label>
+                <input
+                  id="full-name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                />
+              </div>
 
-          <label for="contact-subject">Subject</label>
-          <input
-            id="contact-subject"
-            type="text"
-            placeholder="What is this about?"
-          />
+              <div class="form-group full">
+                <label for="email">Email Address</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="username"
+                  required
+                />
+              </div>
 
-          <label for="contact-message">Message</label>
-          <textarea
-            id="contact-message"
-            cols="30"
-            rows="10"
-            placeholder="Write your message here"
-          ></textarea>
+              <div class="form-group full">
+                <label for="phone">Phone Number</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  required
+                />
+              </div>
 
-          <button class="normal" type="submit">Submit</button>
-        </form>
+              <div class="form-group full">
+                <label for="new-password">Password</label>
+                <div class="password-wrap">
+                  <input
+                    id="new-password"
+                    name="password"
+                    type="password"
+                    minlength="8"
+                    autocomplete="new-password"
+                    aria-describedby="password-help"
+                    required
+                  />
+                  <button
+                    class="toggle-password"
+                    type="button"
+                    id="toggle-password"
+                    aria-label="Show password as plain text"
+                  >
+                    Show
+                  </button>
+                </div>
+                <small id="password-help">
+                  Use at least 8 characters for a stronger password.
+                </small>
+              </div>
 
-        <div class="people">
-          <div class="people-card">
-            <img src="img/people/1.png" alt="Customer support contact person" />
-            <p>
-              <span>Sarah Williams</span>
-              Senior Marketing Manager <br />
-              Phone: +91 98765 11111 <br />
-              Email: sarah@carafashion.com
-            </p>
-          </div>
+              <div class="form-group full">
+                <label for="confirm-password">Confirm Password</label>
+                <div class="password-wrap">
+                  <input
+                    id="confirm-password"
+                    name="confirmPassword"
+                    type="password"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <button
+                    class="toggle-password"
+                    type="button"
+                    id="toggle-confirm-password"
+                    aria-label="Show confirm password as plain text"
+                  >
+                    Show
+                  </button>
+                </div>
+              </div>
+            </div>
 
-          <div class="people-card">
-            <img src="img/people/2.png" alt="Store partnership contact person" />
-            <p>
-              <span>David Parker</span>
-              Store Operations Lead <br />
-              Phone: +91 98765 22222 <br />
-              Email: david@carafashion.com
-            </p>
-          </div>
+            <div class="checkbox-row">
+              <input id="terms" name="terms" type="checkbox" required />
+              <label for="terms">
+                I agree to the <a href="about.html">terms</a> and
+                <a href="about.html">privacy policy</a>.
+              </label>
+            </div>
 
-          <div class="people-card">
-            <img src="img/people/3.png" alt="Customer care contact person" />
-            <p>
-              <span>Emma Johnson</span>
-              Customer Care Manager <br />
-              Phone: +91 98765 33333 <br />
-              Email: emma@carafashion.com
-            </p>
-          </div>
+            <div class="signup-actions">
+              <button class="normal" type="submit">Create Account</button>
+              <p class="login-link">
+                Already have an account? <a href="login.html">Sign in</a>
+              </p>
+            </div>
+          </form>
         </div>
       </section>
 
@@ -808,7 +880,7 @@
 
       <div class="col">
         <h4>My Account</h4>
-        <a href="contact.html">Sign In</a>
+        <a href="signup.html">Sign In / Sign Up</a>
         <a href="cart.html">View Cart</a>
         <a href="shop.html">My Wishlist</a>
         <a href="contact.html">Track My Order</a>
@@ -848,6 +920,25 @@
           nav.classList.remove("active");
         });
       }
+
+      const passwordInput = document.getElementById("new-password");
+      const confirmPasswordInput = document.getElementById("confirm-password");
+      const togglePassword = document.getElementById("toggle-password");
+      const toggleConfirmPassword = document.getElementById(
+        "toggle-confirm-password"
+      );
+
+      togglePassword.addEventListener("click", () => {
+        const isPassword = passwordInput.type === "password";
+        passwordInput.type = isPassword ? "text" : "password";
+        togglePassword.textContent = isPassword ? "Hide" : "Show";
+      });
+
+      toggleConfirmPassword.addEventListener("click", () => {
+        const isPassword = confirmPasswordInput.type === "password";
+        confirmPasswordInput.type = isPassword ? "text" : "password";
+        toggleConfirmPassword.textContent = isPassword ? "Hide" : "Show";
+      });
     </script>
   </body>
 </html>

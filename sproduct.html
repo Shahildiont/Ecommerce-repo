@@ -1,25 +1,1028 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cara | Product Details</title>
+    <meta
+      name="description"
+      content="View product details, choose your size, update quantity, and add your favourite Cara fashion item to cart."
+    />
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tech2etc Ecommerce Tutorial</title>
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-        <link rel="stylesheet" href="style.css">
-    </head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Spartan", sans-serif;
+      }
 
-    <body>
+      html {
+        scroll-behavior: smooth;
+      }
 
+      body {
+        width: 100%;
+        background: #ffffff;
+        color: #1a1a1a;
+      }
 
-        <script>
-            // script for image change on click
-        </script>
+      img {
+        display: block;
+        max-width: 100%;
+      }
 
+      a {
+        text-decoration: none;
+      }
 
-        <script src="script.js"></script>
-    </body>
+      ul {
+        list-style: none;
+      }
 
+      h1 {
+        font-size: 40px;
+        line-height: 1.15;
+        color: #222;
+      }
+
+      h2 {
+        font-size: 32px;
+        line-height: 1.2;
+        color: #222;
+      }
+
+      h3 {
+        font-size: 24px;
+        color: #222;
+      }
+
+      h4 {
+        font-size: 20px;
+        color: #222;
+      }
+
+      h5 {
+        font-size: 16px;
+        color: #1a1a1a;
+      }
+
+      h6 {
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 16px;
+        color: #465b52;
+        line-height: 1.7;
+      }
+
+      .section-p1 {
+        padding: 40px 80px;
+      }
+
+      .section-m1 {
+        margin: 40px 0;
+      }
+
+      .logo {
+        width: 120px;
+      }
+
+      .normal {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 15px 30px;
+        color: #fff;
+        background-color: #088178;
+        border-radius: 4px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        transition: 0.2s ease;
+      }
+
+      .normal:hover {
+        background: #066e67;
+      }
+
+      #header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 80px;
+        background: #e3e6f3;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 999;
+      }
+
+      #navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      #navbar li {
+        position: relative;
+      }
+
+      #navbar li a {
+        font-size: 16px;
+        font-weight: 600;
+        color: #1a1a1a;
+        transition: 0.3s ease;
+        padding: 8px 10px;
+        display: inline-block;
+      }
+
+      #navbar li a:hover,
+      #navbar li a.active {
+        color: #088178;
+      }
+
+      #navbar li a.active::after,
+      #navbar li a:hover::after {
+        content: "";
+        width: 30%;
+        height: 2px;
+        background-color: #088178;
+        position: absolute;
+        bottom: -4px;
+        left: 10px;
+      }
+
+      #mobile {
+        display: none;
+        align-items: center;
+      }
+
+      #close {
+        display: none;
+      }
+
+      .breadcrumb {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .breadcrumb a,
+      .breadcrumb span {
+        color: #465b52;
+        font-size: 14px;
+      }
+
+      #prodetails {
+        display: flex;
+        margin-top: 20px;
+        gap: 50px;
+        align-items: flex-start;
+      }
+
+      .single-pro-image {
+        width: 40%;
+      }
+
+      .single-pro-image #MainImg {
+        width: 100%;
+        border-radius: 20px;
+        background: #f8f8f8;
+      }
+
+      .small-img-group {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        margin-top: 15px;
+      }
+
+      .small-img-col {
+        flex: 1;
+        cursor: pointer;
+      }
+
+      .small-img-col img {
+        width: 100%;
+        border-radius: 12px;
+        border: 2px solid transparent;
+        transition: 0.2s ease;
+      }
+
+      .small-img-col img:hover,
+      .small-img-col img.active-thumb {
+        border-color: #088178;
+      }
+
+      .single-pro-details {
+        width: 50%;
+        padding-top: 20px;
+      }
+
+      .single-pro-details .category {
+        display: inline-block;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #088178;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+
+      .single-pro-details h4 {
+        padding: 10px 0 16px;
+      }
+
+      .single-pro-details h2 {
+        font-size: 28px;
+        margin-bottom: 14px;
+      }
+
+      .price-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+
+      .price-row .current-price {
+        font-size: 28px;
+        font-weight: 700;
+        color: #088178;
+      }
+
+      .price-row .old-price {
+        font-size: 16px;
+        color: #8c9a95;
+        text-decoration: line-through;
+      }
+
+      .rating {
+        color: #f3b519;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .rating span {
+        color: #465b52;
+        font-size: 14px;
+      }
+
+      .single-pro-details p {
+        margin-bottom: 20px;
+      }
+
+      .single-pro-details label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #1a1a1a;
+      }
+
+      .single-pro-details select,
+      .single-pro-details input {
+        display: block;
+        padding: 12px 14px;
+        border: 1px solid #d7d7d7;
+        border-radius: 10px;
+        font-size: 14px;
+        outline: none;
+        margin-bottom: 18px;
+      }
+
+      .single-pro-details select {
+        min-width: 220px;
+        background: #fff;
+      }
+
+      .buy-row {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      .buy-row input {
+        width: 80px;
+        margin-bottom: 0;
+        text-align: center;
+      }
+
+      .product-points {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 24px;
+      }
+
+      .product-points li {
+        font-size: 14px;
+        color: #465b52;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        line-height: 1.7;
+      }
+
+      .product-points i {
+        color: #088178;
+        margin-top: 3px;
+      }
+
+      .details-box {
+        border: 1px solid #ececec;
+        border-radius: 18px;
+        padding: 24px;
+        background: #fcfcfc;
+      }
+
+      .details-box h4 {
+        margin-bottom: 14px;
+      }
+
+      .details-box ul {
+        display: grid;
+        gap: 10px;
+      }
+
+      .details-box li {
+        font-size: 14px;
+        color: #465b52;
+      }
+
+      #product1 {
+        text-align: center;
+      }
+
+      #product1 .pro-container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      #product1 .pro {
+        width: 23%;
+        min-width: 250px;
+        padding: 12px;
+        border: 1px solid #cce7d0;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+        transition: 0.2s ease;
+        position: relative;
+        text-align: left;
+        background: #fff;
+      }
+
+      #product1 .pro:hover {
+        box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.08);
+        transform: translateY(-4px);
+      }
+
+      #product1 .pro img {
+        width: 100%;
+        border-radius: 20px;
+      }
+
+      #product1 .pro .des {
+        padding: 10px 0;
+      }
+
+      #product1 .pro .des span {
+        color: #606063;
+        font-size: 12px;
+      }
+
+      #product1 .pro .des h5 {
+        padding-top: 7px;
+        color: #1a1a1a;
+        font-size: 14px;
+      }
+
+      #product1 .pro .des i {
+        font-size: 12px;
+        color: rgb(243, 181, 25);
+      }
+
+      #product1 .pro .des h4 {
+        padding-top: 7px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #088178;
+      }
+
+      #product1 .pro .cart {
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        border-radius: 50px;
+        background-color: #e8f6ea;
+        font-weight: 500;
+        color: #088178;
+        border: 1px solid #cce7d0;
+        position: absolute;
+        bottom: 20px;
+        right: 14px;
+        text-align: center;
+      }
+
+      #newsletter {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+        background-image: url("img/banner/b14.png");
+        background-repeat: no-repeat;
+        background-position: 20% 30%;
+        background-color: #041e42;
+      }
+
+      #newsletter h4 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      #newsletter p {
+        font-size: 14px;
+        font-weight: 600;
+        color: #818ea0;
+        margin-bottom: 0;
+      }
+
+      #newsletter p span {
+        color: #ffbd27;
+      }
+
+      #newsletter .form {
+        display: flex;
+        width: 40%;
+        min-width: 320px;
+      }
+
+      #newsletter input {
+        height: 3.125rem;
+        padding: 0 1.25em;
+        font-size: 14px;
+        width: 100%;
+        border: 1px solid transparent;
+        border-radius: 4px 0 0 4px;
+        outline: none;
+      }
+
+      #newsletter button {
+        white-space: nowrap;
+        border-radius: 0 4px 4px 0;
+      }
+
+      footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      footer .col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        min-width: 220px;
+      }
+
+      footer .logo {
+        margin-bottom: 20px;
+      }
+
+      footer h4 {
+        font-size: 14px;
+        padding-bottom: 20px;
+      }
+
+      footer p {
+        font-size: 13px;
+        margin: 0 0 8px 0;
+      }
+
+      footer a {
+        font-size: 13px;
+        color: #222;
+        margin-bottom: 10px;
+      }
+
+      footer .follow {
+        margin-top: 20px;
+      }
+
+      footer .follow i {
+        color: #465b52;
+        padding-right: 4px;
+      }
+
+      footer .install .row {
+        display: flex;
+        gap: 10px;
+      }
+
+      footer .install .row img {
+        border: 1px solid #088178;
+        border-radius: 6px;
+      }
+
+      footer .install img {
+        margin: 10px 0 15px 0;
+      }
+
+      footer .copyright {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid #e5e5e5;
+        padding-top: 20px;
+      }
+
+      @media (max-width: 1080px) {
+        .section-p1 {
+          padding: 40px;
+        }
+
+        #header {
+          padding: 20px 40px;
+        }
+
+        #prodetails {
+          gap: 30px;
+        }
+      }
+
+      @media (max-width: 799px) {
+        h1 {
+          font-size: 34px;
+        }
+
+        .section-p1 {
+          padding: 30px 20px;
+        }
+
+        #header {
+          padding: 18px 20px;
+        }
+
+        #navbar {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          position: fixed;
+          top: 0;
+          right: -320px;
+          height: 100vh;
+          width: 300px;
+          background-color: #e3e6f3;
+          box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+          padding: 80px 0 0 20px;
+          transition: 0.3s ease;
+          gap: 0;
+        }
+
+        #navbar.active {
+          right: 0;
+        }
+
+        #navbar li {
+          margin-bottom: 18px;
+        }
+
+        #mobile {
+          display: flex;
+          align-items: center;
+        }
+
+        #mobile i {
+          color: #000;
+          font-size: 24px;
+          padding-left: 20px;
+          cursor: pointer;
+        }
+
+        #close {
+          display: initial;
+          position: absolute;
+          top: 24px;
+          left: 24px;
+          color: #222;
+          font-size: 24px;
+        }
+
+        #lg-bag {
+          display: none;
+        }
+
+        #prodetails {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .single-pro-image,
+        .single-pro-details {
+          width: 100%;
+        }
+
+        #product1 .pro-container {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 477px) {
+        .buy-row {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .buy-row input,
+        .buy-row button,
+        .single-pro-details select {
+          width: 100%;
+        }
+
+        .small-img-group {
+          gap: 8px;
+        }
+
+        #newsletter .form {
+          flex-direction: column;
+          min-width: 100%;
+          gap: 10px;
+        }
+
+        #newsletter input,
+        #newsletter button {
+          width: 100%;
+          border-radius: 4px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="header">
+      <a href="index.html" aria-label="Cara home">
+        <img src="img/logo.png" class="logo" alt="Cara logo" />
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <ul id="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li id="lg-bag">
+            <a href="cart.html" aria-label="Cart">
+              <i class="far fa-shopping-bag"></i>
+            </a>
+          </li>
+          <a href="#" id="close" aria-label="Close menu">
+            <i class="far fa-times"></i>
+          </a>
+        </ul>
+      </nav>
+
+      <div id="mobile">
+        <a href="cart.html" aria-label="Cart">
+          <i class="far fa-shopping-bag"></i>
+        </a>
+        <i id="bar" class="fas fa-outdent" aria-label="Open menu"></i>
+      </div>
+    </header>
+
+    <main>
+      <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+          <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="shop.html">Shop</a>
+            <span>/</span>
+            <span>Printed Cotton Shirt</span>
+          </div>
+
+          <img
+            src="img/products/f1.jpg"
+            width="100%"
+            id="MainImg"
+            alt="Printed cotton shirt main product view"
+          />
+
+          <div class="small-img-group">
+            <div class="small-img-col">
+              <img
+                src="img/products/f1.jpg"
+                width="100%"
+                class="small-img active-thumb"
+                alt="Printed cotton shirt thumbnail one"
+              />
+            </div>
+            <div class="small-img-col">
+              <img
+                src="img/products/f2.jpg"
+                width="100%"
+                class="small-img"
+                alt="Printed cotton shirt thumbnail two"
+              />
+            </div>
+            <div class="small-img-col">
+              <img
+                src="img/products/f3.jpg"
+                width="100%"
+                class="small-img"
+                alt="Printed cotton shirt thumbnail three"
+              />
+            </div>
+            <div class="small-img-col">
+              <img
+                src="img/products/f4.jpg"
+                width="100%"
+                class="small-img"
+                alt="Printed cotton shirt thumbnail four"
+              />
+            </div>
+          </div>
+        </div>
+
+        <section class="single-pro-details" aria-labelledby="product-title">
+          <span class="category">Home / T-Shirt</span>
+          <h4 id="product-title">Men's Fashion Printed Cotton Shirt</h4>
+
+          <div class="rating" aria-label="Product rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>4.5 rating · 128 reviews</span>
+          </div>
+
+          <div class="price-row">
+            <span class="current-price">Rs 1000</span>
+            <span class="old-price">Rs 1499</span>
+          </div>
+
+          <p>
+            A clean printed cotton shirt designed for everyday wear. It combines
+            lightweight comfort, a modern silhouette, and versatile styling that
+            works across casual and smart-casual outfits.
+          </p>
+
+          <label for="product-size">Select Size</label>
+          <select id="product-size" name="size">
+            <option>Select Size</option>
+            <option>XL</option>
+            <option>XXL</option>
+            <option>Small</option>
+            <option>Large</option>
+          </select>
+
+          <ul class="product-points">
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Soft cotton fabric for all-day comfort.
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Modern printed finish for a stylish casual look.
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Easy to pair with denim, chinos, or layered outfits.
+            </li>
+          </ul>
+
+          <div class="buy-row">
+            <label class="sr-only" for="product-qty">Quantity</label>
+            <input id="product-qty" type="number" value="1" min="1" />
+            <button class="normal" type="button">Add To Cart</button>
+          </div>
+
+          <div class="details-box">
+            <h4>Product Details</h4>
+            <ul>
+              <li><strong>Category:</strong> Men's fashion</li>
+              <li><strong>Material:</strong> 100% premium cotton</li>
+              <li><strong>Fit:</strong> Regular fit</li>
+              <li><strong>Sleeves:</strong> Half sleeves</li>
+              <li><strong>Care:</strong> Machine wash cold, gentle cycle</li>
+              <li><strong>Delivery:</strong> Usually ships within 2–4 business days</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <section id="product1" class="section-p1">
+        <h2>Featured Products</h2>
+        <p>Products related to your current selection.</p>
+
+        <div class="pro-container">
+          <article class="pro">
+            <img src="img/products/n1.jpg" alt="Related product one" />
+            <div class="des">
+              <span>Cara</span>
+              <h5>Casual Printed Summer Shirt</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>Rs 920</h4>
+            </div>
+            <a class="cart" href="cart.html" aria-label="Add related product to cart">
+              <i class="fal fa-shopping-cart"></i>
+            </a>
+          </article>
+
+          <article class="pro">
+            <img src="img/products/n2.jpg" alt="Related product two" />
+            <div class="des">
+              <span>Cara</span>
+              <h5>Relaxed Fit Weekend Shirt</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>Rs 1100</h4>
+            </div>
+            <a class="cart" href="cart.html" aria-label="Add related product to cart">
+              <i class="fal fa-shopping-cart"></i>
+            </a>
+          </article>
+
+          <article class="pro">
+            <img src="img/products/n3.jpg" alt="Related product three" />
+            <div class="des">
+              <span>Cara</span>
+              <h5>Premium Streetwear Cotton Tee</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>Rs 980</h4>
+            </div>
+            <a class="cart" href="cart.html" aria-label="Add related product to cart">
+              <i class="fal fa-shopping-cart"></i>
+            </a>
+          </article>
+
+          <article class="pro">
+            <img src="img/products/n4.jpg" alt="Related product four" />
+            <div class="des">
+              <span>Cara</span>
+              <h5>Classic Printed Everyday Shirt</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>Rs 1050</h4>
+            </div>
+            <a class="cart" href="cart.html" aria-label="Add related product to cart">
+              <i class="fal fa-shopping-cart"></i>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+          <h4>Sign Up For Newsletters</h4>
+          <p>
+            Get email updates about our latest shop and
+            <span>special offers</span>.
+          </p>
+        </div>
+        <form class="form">
+          <input type="email" placeholder="Your email address" />
+          <button class="normal" type="submit">Sign Up</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="section-p1">
+      <div class="col">
+        <img class="logo" src="img/logo.png" alt="Cara logo" />
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> 84/6 Chinna Kaziyar Street, Cuddalore</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+        <div class="follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>About</h4>
+        <a href="about.html">About Us</a>
+        <a href="about.html">Delivery Information</a>
+        <a href="about.html">Privacy Policy</a>
+        <a href="about.html">Terms & Conditions</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="login.html">Sign In</a>
+        <a href="signup.html">Create Account</a>
+        <a href="cart.html">View Cart</a>
+        <a href="shop.html">My Wishlist</a>
+        <a href="contact.html">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img src="img/pay/app.jpg" alt="App Store" />
+          <img src="img/pay/play.jpg" alt="Google Play" />
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="img/pay/pay.png" alt="Payment methods" />
+      </div>
+
+      <div class="copyright">
+        <p>© 2026 Cara. HTML CSS JavaScript e-commerce template.</p>
+      </div>
+    </footer>
+
+    <script>
+      const bar = document.getElementById("bar");
+      const close = document.getElementById("close");
+      const nav = document.getElementById("navbar");
+
+      if (bar) {
+        bar.addEventListener("click", () => {
+          nav.classList.add("active");
+        });
+      }
+
+      if (close) {
+        close.addEventListener("click", (e) => {
+          e.preventDefault();
+          nav.classList.remove("active");
+        });
+      }
+
+      const mainImg = document.getElementById("MainImg");
+      const smallImgs = document.querySelectorAll(".small-img");
+
+      smallImgs.forEach((img) => {
+        img.addEventListener("click", () => {
+          mainImg.src = img.src;
+
+          smallImgs.forEach((item) => item.classList.remove("active-thumb"));
+          img.classList.add("active-thumb");
+        });
+      });
+    </script>
+  </body>
 </html>

@@ -404,12 +404,12 @@ footer .col{
     background-color: #E3E6F3;
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.0.01);
     padding: 80px 0 0 10px;
-    transition: 0.03s;
-
+    transition: 0.05s;
   }
   #navbar.active{
     right: 0px;
   }
+
   #navbar li{
     margin-bottom: 25px;
   }
@@ -417,10 +417,11 @@ footer .col{
     display: flex;
     align-items: center;
   }
-  #mobile i{
-    color: #1a1a1a;
+  #mobile i {
+    color: #000;
     font-size: 24px;
     padding-left: 20px;
+
   }
   #close{
     position: absolute;
@@ -428,5 +429,9 @@ footer .col{
     left: 30px;
     color: #222;
     font-size: 24px;
+  }
+  
+  #lg-bag{
+    display: none;
   }
 }
